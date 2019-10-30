@@ -1,0 +1,39 @@
+{
+  "name": "my_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "release": "standard-version",
+    "validate": "npm prune",
+    "pre-commit": "npm run lint",
+    "pre-push": "npm run validate",
+    "npmi": "npm i",
+    "post-merge": "npm run npmi",
+    "post-rewrite": "npm run npmi"
+  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tangfen/my_blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tangfen/my_blog/issues"
+  },
+  "homepage": "https://github.com/tangfen/my_blog#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "husky": "^3.0.9"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "eslint \"src/**/*.{js,ts,vue}\""
+    }
+  }
+}
