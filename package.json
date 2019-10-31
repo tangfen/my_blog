@@ -13,7 +13,7 @@
     "npmi": "npm i",
     "post-merge": "npm run npmi",
     "post-rewrite": "npm run npmi"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tangfen/my_blog.git"
@@ -28,12 +28,13 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "husky": "^3.0.9"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "eslint \"src/**/*.{js,ts,vue}\""
-    }
+    "husky": "^3.0.9",
+    "standard-version": "^7.0.0"
   }
+//  "husky": {
+//    "hooks": {
+//      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+//      "pre-commit": "eslint \"src/**/*.{js,ts,vue}\""
+//    }
+//  }
 }
